@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="проектная работа 4">
+	<meta name="keywords" content="Фотографии из поездок по России">
+	<meta name="author" content="Artur Khelshtein">
+	<title>Mesto Russia</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+	<link rel="stylesheet" href="./pages/index.css">
+	<script src="" defer></script>
+</head>
+
+<body class="page">
+	<header class="header">
+		<a href="#" class="header__logo-container">
+			<img src="./images/logo/logo__Mesto_white.svg" alt="лого" class="header__logo-img">
+		</a>
+	</header>
+
+	<main class="content">
+		<section class="profile">
+			<div class="profile__container">
+				<img class="profile__photo" src="./images/profile-photo.jpg" alt="фото профиля"></img>
+				<div class="profile__container-name">
+					<h1 class="profile__name">Жак-Ив Кусто</h1>
+					<button class="profile__button-edit">
+						<span class="sr-only">Редактировать профиль.</span>
+					</button>
+				</div>
+				<p class="profile__description">Исследователь океана</p>
+			</div>
+			<div class="profile__button-add">
+				<span class="sr-only">Добавить место.</span>
+			</div>
+		</section>
+		<section class="popup">
+			<div class="popup__container">
+				<button class="popup__button-close" type="reset">
+					<span class="sr-only">Закрыть редактирование профиля.</span>
+				</button>
+				<h3 class="popup__heading">Редактировать профиль</h3>
+				<input class="popup__name" type="text" name="name" placeholder="Имя" required>
+				<input class="popup__description" type="text" name="description" placeholder="Описание" required>
+				<button class="popup__button-save" type="submit">Сохранить
+					<span class="sr-only">изменения в профиле.</span>
+				</button>
+				</button>
+			</div>
+		</section>
+		<section class="photo">
+			<figure class="photo__container">
+				<img class="photo__img" src="./images/photo_Cherepovets.jpg" alt="Череповец">
+				<figcaption class="photo__container-name-like">
+					<h2 class="photo__name">Череповец</h2>
+					<span class="sr-only">Добавить в избранное.</span>
+					<dev class="photo__like"></dev>
+				</figcaption>
+			</figure>
+			<figure class="photo__container">
+				<img class="photo__img" src="./images/photo_Moskow.jpg" alt="Москва">
+				<figcaption class="photo__container-name-like">
+					<h2 class="photo__name">Москва</h2>
+					<span class="sr-only">Добавить в избранное.</span>
+					<dev class="photo__like"></dev>
+				</figcaption>
+			</figure>
+			<figure class="photo__container">
+				<img class="photo__img" src="./images/photo_Nizhny Novgorod.jpg" alt="Нижний Новгород">
+				<figcaption class="photo__container-name-like">
+					<h2 class="photo__name">Нижний Новгород</h2>
+					<span class="sr-only">Добавить в избранное.</span>
+					<dev class="photo__like"></dev>
+				</figcaption>
+			</figure>
+			<figure class="photo__container">
+				<img class="photo__img" src="./images/photo_Novosibirsk.jpg" alt="Новосибирск">
+				<figcaption class="photo__container-name-like">
+					<h2 class="photo__name">Новосибирск</h2>
+					<span class="sr-only">Добавить в избранное.</span>
+					<dev class="photo__like"></dev>
+				</figcaption>
+			</figure>
+			<figure class="photo__container">
+				<img class="photo__img" src="./images/photo_SPb.jpg" alt="Санкт-Петербург">
+				<figcaption class="photo__container-name-like">
+					<h2 class="photo__name">Санкт-Петербург</h2>
+					<span class="sr-only">Добавить в избранное.</span>
+					<dev class="photo__like"></dev>
+				</figcaption>
+			</figure>
+			<figure class="photo__container">
+				<img class="photo__img" src="./images/photo_Vladivistok.jpg" alt="Владивосток">
+				<figcaption class="photo__container-name-like">
+					<h2 class="photo__name">Владивосток</h2>
+					<span class="sr-only">Добавить в избранное.</span>
+					<dev class="photo__like"></dev>
+				</figcaption>
+			</figure>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<p class="footer__copyright">© 2023 Mesto Russia</p>
+	</footer>
+</body>
+
+</html>

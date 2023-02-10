@@ -1,0 +1,21 @@
+.popup__description {
+	margin-bottom: 45px;
+	padding-bottom: 9px;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	color: #000;
+	font-family: inherit;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+.popup__description:focus {
+	outline: none;
+}
+
+@media (min-width: 600px) {
+	.popup__description {
+		margin-bottom: 48px;
+	}
+}

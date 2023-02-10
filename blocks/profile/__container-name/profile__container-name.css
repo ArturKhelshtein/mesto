@@ -1,0 +1,17 @@
+.profile__container-name {
+	position: relative;
+	margin-bottom: 7px;
+	padding-right: 28px;
+	max-width: 100%;
+	box-sizing: border-box; /*не удалять, важно при переполнении блока и для сохранения позиции кнопки изменить*/
+	overflow: hidden;
+}
+
+@media (min-width: 600px) {
+	.profile__container-name {
+		margin-top: 25px;
+		margin-bottom: 0;
+		padding-right: 48px;
+		grid-area: name;
+	}
+}

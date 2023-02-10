@@ -1,0 +1,15 @@
+.header {
+	margin: 0 auto 42px auto;
+	padding-top: 28px;
+	padding-left: 27px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #545454;
+}
+
+@media (min-width: 1000px) {
+	.header {
+		margin: 0 200px 37px 200px;
+		padding-top: 45px;
+		padding-left: 0;
+	}
+}

@@ -1,0 +1,10 @@
+.photo__like {
+	margin: 5px;
+	width: 22px;
+	height: 19px;
+	background: center / cover url(../../../images/icon-heart.svg);
+}
+
+.photo__like:hover {
+	opacity: 0.6;
+}

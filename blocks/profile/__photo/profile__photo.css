@@ -1,0 +1,15 @@
+.profile__photo {
+	margin-bottom: 26px;
+	border-radius: 50%;
+	width: 120px;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media (min-width: 600px) {
+	.profile__photo {
+		margin: 0;
+		grid-area: foto;
+	}
+}

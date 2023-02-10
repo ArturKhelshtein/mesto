@@ -1,0 +1,12 @@
+.photo__name {
+	margin: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #000;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 29px;
+	text-align: start;
+	text-overflow: ellipsis;
+	text-rendering: optimizeLegibility;
+}
