@@ -1,5 +1,7 @@
 .photo__name {
+	grid-area: name;
 	margin: 0;
+	padding: 25px 5px 31px 21px;
 	overflow: hidden;
 	white-space: nowrap;
 	color: #000;

@@ -1,7 +1,8 @@
 .photo__like {
-	margin: 5px;
+	grid-area: like;
 	width: 22px;
 	height: 19px;
+	align-self: center;
 	background: center / cover url(../../../images/icon-heart.svg);
 }
 

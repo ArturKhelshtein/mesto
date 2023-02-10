@@ -1,6 +1,12 @@
 .photo__container {
 	margin: 0;
 	max-width: 100%;
-	display: flex;
-	flex-direction: column;
+	border-radius: 20px 20px 10px 10px;
+	display: grid;
+	grid-template-columns: 1fr 43px;
+	grid-template-rows: 1fr 79px;
+	grid-template-areas:
+		"foto foto"
+		"name like";
+	background-color: #fff;
 }
