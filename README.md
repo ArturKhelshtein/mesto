@@ -27,3 +27,5 @@
 *визуальная проверка переполнения блоков на экранах всех ширин.
 
 ## ссылка на GitHub Pages:
+
+https://arturkhelshtein.github.io/mesto/
