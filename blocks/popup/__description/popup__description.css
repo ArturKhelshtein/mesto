@@ -11,7 +11,7 @@
 }
 
 .popup__description:focus {
-	outline: none;
+	outline-color: #7fa5f4;
 }
 
 @media (min-width: 600px) {

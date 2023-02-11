@@ -11,5 +11,5 @@
 }
 
 .popup__name:focus {
-	outline: none;
+	outline-color: #7fa5f4;
 }
