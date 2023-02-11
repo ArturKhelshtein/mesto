@@ -54,10 +54,3 @@ profileEditPopupButtonSave.addEventListener('click', function() {
 	}
 	closePopup()
 });
-
-function handleFormSubmit (evt) {
-	evt.preventDefault();
-	const profileNamePopupInput = content.querySelector('.popup__name');
-	profileNamePopupInput.value = profileName;
-	const profileDescriptionPopupInput = content.querySelector('.popup__description');
-	profileDescriptionPopupInput.value = profileDescription;
