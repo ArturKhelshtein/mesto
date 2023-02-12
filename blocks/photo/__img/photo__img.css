@@ -4,6 +4,5 @@
 	grid-area: foto;
 	object-position: center;
 	object-fit: cover;
-	filter: grayscale(60%);
 	aspect-ratio: 1 / 1;
 }

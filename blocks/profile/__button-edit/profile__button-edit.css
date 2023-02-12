@@ -1,7 +1,4 @@
 .profile__button-edit {
-	position: absolute;
-	right: 0px;
-	bottom: 6px;
 	padding: 4px;
 	border: solid 1px #fff;
 	box-sizing: border-box;
@@ -12,13 +9,13 @@
 	background-origin: content-box;
 	background-repeat: no-repeat;
 	opacity: 1;
+	grid-area: btn-edit;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
 	.profile__button-edit {
+		margin-bottom: 9px;
 		padding: 6px;
-		right: 6px;
-		bottom: 14px;
 		width: 24px;
 		height: 24px;
 	}

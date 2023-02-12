@@ -1,6 +1,6 @@
 .profile__container {
 	margin-bottom: 34px;
-	width: 100%;
+	max-width: 100%;
 	display: grid;
 	grid-template-columns: 1fr;
 	justify-items: center;
@@ -11,6 +11,7 @@
 		margin-bottom: 0;
 		max-width: calc(100% - 150px - 24px);
 		grid-template-columns: 120px 1fr;
+		grid-template-rows: 60% 40%;
 		column-gap: 30px;
 		grid-template-areas:
 			"foto name"

@@ -1,0 +1,15 @@
+.profile__container-name-button {
+	margin: 0 auto;
+	margin-bottom: 7px;
+	max-width: 100%;
+	display: flex;
+	gap: 5px;
+}
+
+@media (min-width: 600px) {
+	.profile__container-name-button {
+		margin: 0;
+		align-items: flex-end;
+		gap: 19px;
+	}
+}

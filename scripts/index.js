@@ -1,56 +1,31 @@
 const content = document.querySelector('.content');
+const popup = document.querySelector('.popup');
 
-//---profile
-let profileName = 'Жак-Ив Кусто'; 
-let profileDescription = 'Исследователь океана';
-
-//------page-name-description
-const profileNameElement = content.querySelector('.profile__name');
-profileNameElement.textContent = profileName;
-const profileDescriptionElement =  content.querySelector('.profile__description');
-profileDescriptionElement.textContent = profileDescription;
-
-//------popup-edit--open
+//------profileEdit---variables
+let profileNameElement = content.querySelector('.profile__name');
+let profileDescriptionElement = content.querySelector('.profile__description');
 const profileEditButtonOpen = content.querySelector('.profile__button-edit');
-if(!profileEditButtonOpen) {
-	throw new Error('No profileEditButtonOpen')
+const profileEditPopupButtonClose = popup.querySelector('.popup__button-close');
+const profileEditPopupInputName = popup.querySelector('.popup__input_value_name');
+const profileEditPopupInputDescription = popup.querySelector('.popup__input_value_description');
+const profileEditPopupButtonSave = popup.querySelector('.popup__button-save');
+
+//------profileEdit---function
+function profileEditPopupClose() {
+	popup.classList.remove('popup_opened')
 }
+
+//------profileEdit---listener
 profileEditButtonOpen.addEventListener('click', function() {
-	const profileEditPopup = content.querySelector('.popup')
-	profileEditPopup.classList.add('popup_opened')
-});
-//------popup-edit--close
-const profileEditPopupButtonClose = content.querySelector('.popup__button-close');
-if(!profileEditPopupButtonClose) {
-	throw new Error('No profileEditPopupButtonClose')
-}
-profileEditPopupButtonClose.addEventListener('click', closePopup);
+	profileEditPopupInputName.value = profileNameElement.textContent;
+	profileEditPopupInputDescription.value = profileDescriptionElement.textContent;
+	popup.classList.add('popup_opened')
+})
 
-function closePopup() {
-	const profileEditPopup = content.querySelector('.popup')
-	profileEditPopup.classList.remove('popup_opened')
-}
+profileEditPopupButtonClose.addEventListener('click', profileEditPopupClose);
 
-//------popup-edit-name-description
-const profileNamePopupInput = content.querySelector('.popup__name');
-profileNamePopupInput.value = profileName;
-const profileDescriptionPopupInput = content.querySelector('.popup__description');
-profileDescriptionPopupInput.value = profileDescription;
-//------popup-edit--save
-const profileEditPopupButtonSave = content.querySelector('.popup__button-save');
-if(!profileEditPopupButtonSave) {
-	throw new Error('No profileEditPopupButtonSave')
-}
 profileEditPopupButtonSave.addEventListener('click', function() {
-	profileNameElement.textContent = profileNamePopupInput.value;
-	profileDescriptionElement.textContent = profileDescriptionPopupInput.value;
-	if (profileNamePopupInput.value.length === 0) {
-		profileNameElement.insertAdjacentHTML('beforeend', `
-		<p class="profile__name profile__name_undefined">Нет имени</p>`);
-	}
-	if (profileDescriptionPopupInput.value.length === 0) {
-		profileDescriptionElement.insertAdjacentHTML('beforeend', `
-		<p class="profile__description profile__description_undefined">Нет описания</p>`);
-	}
-	closePopup()
+	profileNameElement.textContent = profileEditPopupInputName.value;
+	profileDescriptionElement.textContent = profileEditPopupInputDescription.value;
+	profileEditPopupClose()
 });

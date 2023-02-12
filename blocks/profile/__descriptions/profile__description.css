@@ -7,11 +7,11 @@
 	font-size: 14px;
 	line-height: 17px;
 	text-overflow: ellipsis;
-	text-rendering: optimizeLegibility;
 }
 
 @media (min-width: 700px) {
 	.profile__description {
+		padding-top: 5px;
 		grid-area: description;
 		font-size: 18px;
 		line-height: 22px;

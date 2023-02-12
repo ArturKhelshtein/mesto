@@ -1,13 +1,16 @@
 .popup__heading {
-	margin: 0 auto 74px auto;
+	margin: 0;
+	margin-bottom: 74px;
 	color: #000;
 	font-weight: 900;
 	font-size: 18px;
 	line-height: 22px;
+	text-align: left;
 }
 
 @media (min-width: 600px) {
 	.popup__heading {
+		margin-bottom: 47px;
 		font-size: 24px;
 		line-height: 29px;
 	}
