@@ -12,21 +12,21 @@ const profileEditPopupButtonSave = popup.querySelector('.popup__button-save');
 
 //------profileEdit---function
 function profileEditPopupClose() {
-	popup.classList.remove('popup_opened')
+	popup.classList.remove('popup_opened');
 }
 
 //------profileEdit---listener
 profileEditButtonOpen.addEventListener('click', function() {
 	profileEditPopupInputName.value = profileNameElement.textContent;
 	profileEditPopupInputDescription.value = profileDescriptionElement.textContent;
-	popup.classList.add('popup_opened')
+	popup.classList.add('popup_opened');
 })
 
 profileEditPopupButtonClose.addEventListener('click', profileEditPopupClose);
 
-profileEditPopupButtonSave.addEventListener('submit', function(event) {
-	event.preventDefault()
+profileEditPopupButtonSave.addEventListener('submit', function(evt) {
+	evt.preventDefault();
 	profileNameElement.textContent = profileEditPopupInputName.value;
 	profileDescriptionElement.textContent = profileEditPopupInputDescription.value;
-	profileEditPopupClose()
+	profileEditPopupClose();
 });
