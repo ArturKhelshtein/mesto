@@ -21,70 +21,69 @@
 		</a>
 	</header>
 
-	<main class="content">
-		<section class="profile">
-			<div class="profile__container">
-				<img class="profile__photo" src="./images/profile-photo.jpg" alt="фото профиля">
-				<div class="profile__container-name-button">
-					<div class="profile__container-name">
+	<body class="page">
+		<main class="content">
+			<section class="profile">
+				<div class="profile__container">
+					<img class="profile__photo" src="./images/profile-photo.jpg" alt="фото профиля">
+					<div class="profile__container-name-button">
 						<h1 class="profile__name">Жак-Ив Кусто</h1>
+						<button class="profile__button-edit" type="button" aria-label="Редактировать профиль"></button>
 					</div>
-					<button class="profile__button-edit" type="button" aria-label="Редактировать профиль"></button>
+					<p class="profile__description">Исследователь океана</p>
 				</div>
-				<p class="profile__description">Исследователь океана</p>
+				<button class="profile__button-add" type="button" aria-label="Добавить фото"></button>
+			</section>
+			<section class="photo">
+				<article class="photo__container">
+					<img class="photo__img" src="./images/photo_Cherepovets.jpg" alt="Череповец">
+					<h2 class="photo__name">Череповец</h2>
+					<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
+				</article>
+				<article class="photo__container">
+					<img class="photo__img" src="./images/photo_Moscow.jpg" alt="Москва">
+					<h2 class="photo__name">Москва</h2>
+					<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
+				</article>
+				<article class="photo__container">
+					<img class="photo__img" src="./images/photo_Nizhny_Novgorod.jpg" alt="Нижний Новгород">
+					<h2 class="photo__name">Нижний Новгород</h2>
+					<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
+				</article>
+				<article class="photo__container">
+					<img class="photo__img" src="./images/photo_Novosibirsk.jpg" alt="Новосибирск">
+					<h2 class="photo__name">Новосибирск</h2>
+					<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
+				</article>
+				<article class="photo__container">
+					<img class="photo__img" src="./images/photo_SPb.jpg" alt="Санкт-Петербург">
+					<h2 class="photo__name">Санкт-Петербург</h2>
+					<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
+				</article>
+				<article class="photo__container">
+					<img class="photo__img" src="./images/photo_Vladivistok.jpg" alt="Владивосток">
+					<h2 class="photo__name">Владивосток</h2>
+					<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
+				</article>
+			</section>
+		</main>
+		<footer class="footer">
+			<p class="footer__copyright">© 2023 Mesto Russia</p>
+		</footer>
+
+		<div class="popup">
+			<div class="popup__container">
+				<button class="popup__button-close" type="button" aria-label="Закрыть окно редактирования профиля"></button>
+				<h3 class="popup__heading">Редактировать профиль</h3>
+				<form class="popup__container-input" method="get" autocomplete="off" name="popoup-input-form">
+					<input class="popup__input popup__input_value_name" type="text" name="name" placeholder="Имя" required>
+					<input class="popup__input popup__input_value_description" type="text" name="description" placeholder="Описание" required>
+					<button class="popup__button-save" type="submit" aria-label="Сохранить измения профиля">Сохранить</button>
+				</form>
 			</div>
-			<button class="profile__button-add" type="button" aria-label="Добавить фото"></button>
-		</section>
-		<section class="photo">
-			<article class="photo__container">
-				<img class="photo__img" src="./images/photo_Cherepovets.jpg" alt="Череповец">
-				<h2 class="photo__name">Череповец</h2>
-				<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
-			</article>
-			<article class="photo__container">
-				<img class="photo__img" src="./images/photo_Moscow.jpg" alt="Москва">
-				<h2 class="photo__name">Москва</h2>
-				<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
-			</article>
-			<article class="photo__container">
-				<img class="photo__img" src="./images/photo_Nizhny_Novgorod.jpg" alt="Нижний Новгород">
-				<h2 class="photo__name">Нижний Новгород</h2>
-				<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
-			</article>
-			<article class="photo__container">
-				<img class="photo__img" src="./images/photo_Novosibirsk.jpg" alt="Новосибирск">
-				<h2 class="photo__name">Новосибирск</h2>
-				<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
-			</article>
-			<article class="photo__container">
-				<img class="photo__img" src="./images/photo_SPb.jpg" alt="Санкт-Петербург">
-				<h2 class="photo__name">Санкт-Петербург</h2>
-				<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
-			</article>
-			<article class="photo__container">
-				<img class="photo__img" src="./images/photo_Vladivistok.jpg" alt="Владивосток">
-				<h2 class="photo__name">Владивосток</h2>
-				<button class="photo__like" type="button" aria-label="Добавить в избранное"></button>
-			</article>
-		</section>
-	</main>
-	<footer class="footer">
-		<p class="footer__copyright">© 2023 Mesto Russia</p>
-	</footer>
-
-	<aside class="popup">
-		<div class="popup__container">
-			<button class="popup__button-close" type="button" aria-label="Закрыть окно редактирования профиля"></button>
-			<h3 class="popup__heading">Редактировать профиль</h3>
-			<form class="popup__container-input" action="" method="get" autocomplete="off" id="popoup-input-form">
-				<input class="popup__input popup__input_value_name" type="text" name="name" placeholder="Имя" required>
-				<input class="popup__input popup__input_value_description" type="text" name="description" placeholder="Описание" required>
-				<button class="popup__button-save" type="submit" aria-label="Сохранить измения профиля" form="popoup-input-form">Сохранить</button>
-			</form>
 		</div>
-	</aside>
 
-	<script src="./scripts/index.js"></script>
-</body>
+		<script src="./scripts/index.js"></script>
+	</body>
 
 </html>

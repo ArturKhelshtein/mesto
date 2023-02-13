@@ -1,9 +1,0 @@
-.profile__container-name {
-	margin: 0;
-	max-width: 100%;
-	box-sizing: border-box; /*не удалять, важно при переполнении блока и для сохранения позиции кнопки изменить*/
-	overflow: hidden;
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-items: center;
-}

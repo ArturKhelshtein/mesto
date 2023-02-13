@@ -24,7 +24,8 @@ profileEditButtonOpen.addEventListener('click', function() {
 
 profileEditPopupButtonClose.addEventListener('click', profileEditPopupClose);
 
-profileEditPopupButtonSave.addEventListener('click', function() {
+profileEditPopupButtonSave.addEventListener('submit', function(event) {
+	event.preventDefault()
 	profileNameElement.textContent = profileEditPopupInputName.value;
 	profileDescriptionElement.textContent = profileEditPopupInputDescription.value;
 	profileEditPopupClose()

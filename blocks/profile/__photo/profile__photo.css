@@ -7,7 +7,7 @@
 	object-position: center;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
 	.profile__photo {
 		margin: 0;
 		grid-area: foto;
