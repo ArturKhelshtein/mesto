@@ -8,15 +8,14 @@ const profileEditButtonOpen = content.querySelector('.profile__button-edit');
 const profileEditPopupButtonClose = popup.querySelector('.popup__button-close');
 const profileEditPopupInputName = popup.querySelector('.popup__input_value_name');
 const profileEditPopupInputDescription = popup.querySelector('.popup__input_value_description');
-const profileEditPopupButtonSave = popup.querySelector('.popup__button-save');
 const profileEditPopupFormSave = popup.querySelector('.popup__container-input')
 
-//------profileEdit---function
+//------profileEdit---functions
 function profileEditPopupClose() {
 	popup.classList.remove('popup_opened');
 }
 
-//------profileEdit---listener
+//------profileEdit---listeners
 profileEditButtonOpen.addEventListener('click', function() {
 	profileEditPopupInputName.value = profileNameElement.textContent;
 	profileEditPopupInputDescription.value = profileDescriptionElement.textContent;
