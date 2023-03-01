@@ -1,6 +1,5 @@
 .photo__img {
 	width: 100%;
-	border-radius: 10px 10px 0 0;
 	grid-area: foto;
 	object-position: center;
 	object-fit: cover;
