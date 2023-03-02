@@ -40,6 +40,10 @@ const profileDescriptionElement = content.querySelector('.profile__description')
 const profileEditButtonOpen = content.querySelector('.profile__button-edit');
 const photoAddButtonOpen = content.querySelector('.profile__button-add');
 const photoSection = content.querySelector('.photo')
+//------photo template
+const photoTemplate = document.querySelector('#photo__template');
+//------popup
+const closeButtons = document.querySelectorAll('.popup__button-close');
 //------popup profile edit
 const profileEditPopup = document.querySelector('#profile');
 const profileEditButtonClose = profileEditPopup.querySelector('.popup__button-close');
@@ -55,74 +59,76 @@ const photoAddPopupFormSave = photoAddPopup.querySelector('.popup__container-inp
 //------popup photo large format
 const photoLargeFormatPopup = document.querySelector('#photo-large-format');
 const photoLargeFormatButtonClose = photoLargeFormatPopup.querySelector('.popup__button-close');
+const photoLargeFormatName = photoLargeFormatPopup.querySelector('.popup__photo-name');
+const photoLargeFormatImg = photoLargeFormatPopup.querySelector('.popup__photo-img');
 
 //existing data
-photos.forEach(addPhoto);
+photos.forEach((photo) => {
+	const photoData = createPhoto(photo);
+	photoSection.append(photoData);	
+})
 
 //functions
-function togglePopup (evt) {
-	evt.classList.toggle('popup_opened')
+function openPopup (popup) {
+	popup.classList.add('popup_opened');
+}
+function closePopup (popup) {
+	popup.classList.remove('popup_opened');
+}
+function createPhoto (photo) {
+	const photoElement = photoTemplate.content.cloneNode(true);
+	const photoElementImg = photoElement.querySelector('.photo__img');
+	photoElementImg.setAttribute('src', photo.image);
+	photoElementImg.setAttribute('alt', photo.alt);
+	photoElementImg.addEventListener('click', handlerPhotoLargeFormat);
+	photoElement.querySelector('.photo__name').textContent = photo.name;
+	photoElement.querySelector('.photo__trash-bin').addEventListener('click', handlerPhotoButtonDelete);
+	photoElement.querySelector('.photo__like').addEventListener('click', handlerPhotoLike);
+	return photoElement;
 };
 function addPhoto (photo) {
-	const photoNew = document.querySelector('#photo__template').content.cloneNode(true);
-	const photoName = photoNew.querySelector('.photo__name');
-	photoName.textContent = photo.name;
-	const photoImg = photoNew.querySelector('.photo__img');
-	photoImg.setAttribute('src', photo.image);
-	photoImg.setAttribute('alt', photo.alt);
-	const photoButtonDelete = photoNew.querySelector('.photo__trash-bin');
-	photoButtonDelete.addEventListener('click', handlerPhotoButtonDelete);
-	const photoLargeFormatOpen = photoNew.querySelector('.photo__img');
-	photoLargeFormatOpen.addEventListener('click', handlerPhotoLargeFormat);
-	const photoButtonLike = photoNew.querySelector('.photo__like');
-	photoButtonLike.addEventListener('click', handlerPhotoLike);
-	photoSection.prepend(photoNew);
-};
+	const photoNew = createPhoto(photo);
+	photoSection.prepend(photoNew);	
+}
 function handlerPhotoLike (like) {
 	like.target.classList.toggle('photo__like_active');
 };
-function handlerPhotoButtonDelete (evt) {
-	evt.target.closest('.photo__container').remove();
+function handlerPhotoButtonDelete (button) {
+	button.target.closest('.photo__container').remove();
 };
-function handlerPhotoLargeFormat (evt) {
-	const currentImg = evt.target.closest('.photo__img');
-	const photoLargeFormatImg = currentImg.src;
-	const photoLargeFormatAlt = currentImg.alt;
-	const currentContainer = currentImg.closest('.photo__container')
-	const photoLargeFormatOverlay = photoLargeFormatPopup.style = "background-color: rgba(0, 0, 0, 0.9);";
-	const photoLargeFormatName = currentContainer.querySelector('.photo__name').textContent;
-	const photoImg = photoLargeFormatPopup.querySelector('.popup__photo-img');
-	photoImg.setAttribute('src', photoLargeFormatImg);
-	photoImg.setAttribute('alt', photoLargeFormatAlt);
-	const photoName = photoLargeFormatPopup.querySelector('.popup__photo-name');
-	photoName.textContent = photoLargeFormatName
-	togglePopup(photoLargeFormatPopup)
+function handlerPhotoLargeFormat (img) {
+	const currentImg = img.target.closest('.photo__img');
+	const currentContainer = currentImg.closest('.photo__container');
+	photoLargeFormatPopup.style = "background-color: rgba(0, 0, 0, 0.9);";
+	photoLargeFormatImg.setAttribute('src', currentImg.src);
+	photoLargeFormatImg.setAttribute('alt', currentImg.alt);
+	photoLargeFormatName.textContent = currentContainer.querySelector('.photo__name').textContent;
+	openPopup(photoLargeFormatPopup)
 };
 
 //listeners
 //------page
 profileEditButtonOpen.addEventListener('click', function() {
-	togglePopup(profileEditPopup);
+	openPopup(profileEditPopup);
 	profileEditPopupInputName.value = profileNameElement.textContent;
 	profileEditPopupInputDescription.value = profileDescriptionElement.textContent;
 });
 photoAddButtonOpen.addEventListener('click', function() {
-	togglePopup(photoAddPopup);
+	openPopup(photoAddPopup);
+});
+//------popup
+closeButtons.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
 });
 //------popup profile edit
-profileEditButtonClose.addEventListener('click', function() {
-	togglePopup(profileEditPopup)
-});
 profileEditPopupFormSave.addEventListener('submit', function(evt) {
 	evt.preventDefault();
 	profileNameElement.textContent = profileEditPopupInputName.value;
 	profileDescriptionElement.textContent = profileEditPopupInputDescription.value;
-	togglePopup(profileEditPopup);
+	closePopup(profileEditPopup);
 });
 //------popup photo add
-photoAddPopupButtonClose.addEventListener('click', function() {
-	togglePopup(photoAddPopup);
-});
 photoAddPopupFormSave.addEventListener('submit', function(evt) {
 	evt.preventDefault();
 	const image = photoAddInputImg.value;
@@ -135,9 +141,5 @@ photoAddPopupFormSave.addEventListener('submit', function(evt) {
 	}
 	addPhoto(photoNew);
 	evt.target.reset();
-	togglePopup(photoAddPopup);
-});
-//------popup photo large format
-photoLargeFormatButtonClose.addEventListener('click', function() {
-	togglePopup(photoLargeFormatPopup);
+	closePopup(photoAddPopup);
 });
